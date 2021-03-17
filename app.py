@@ -176,6 +176,7 @@ def ai():
                 email_id = request.form['uname']
                 pwd = request.form['psw']
                 try:
+                    return redirect(url_for('dashboard'))
                     sk = Skype(email_id, pwd, ".tokens_File")
                     print(sk)
 #                     if sk:
