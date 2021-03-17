@@ -176,35 +176,35 @@ def ai():
                 email_id = request.form['uname']
                 pwd = request.form['psw']
                 try:
-                    return redirect(url_for('dashboard'))
-                    sk = Skype(email_id, pwd, ".tokens_File")
-                    print(sk)
-#                     if sk:
-#                         user_id = str(sk.user)
-#                         user_id = user_id.split("Name")[0].split(":")[1].strip()
-#                         user_id_chat = "8:"+user_id
-#                         session['user_id_chat'] = user_id_chat
-#                         session['skype_id'] = email_id
-#                         session['skype_pwd'] = pwd
-#                         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#                         cursor.execute('SELECT * FROM ai_login WHERE login_user = % s AND password = % s', (email_id, pwd,))
-#                         account = cursor.fetchone()
-#                         if not account:
-#                             cursor1 = mysql.connection.cursor()
-#                             cursor1.execute('INSERT INTO ai_login (login_user, password) VALUES (%s, %s) ', (email_id, pwd,))
-#                             mysql.connection.commit()
-#                             return redirect(url_for('upload_json'))
-#                         elif not account['json_file']:
-#                             return redirect(url_for('upload_json'))
-#                         elif not account['csv_file']:
-#                             return redirect(url_for('upload'))
-#                         else:
-#                             return render_template('dashboard.html', sk_user=session['skype_id'])
+#                     sk = Skype(email_id, pwd, ".tokens_File")
+                    sk = Skype(email_id, pwd)
+#                     print(sk)
+                    if sk:
+                        user_id = str(sk.user)
+                        user_id = user_id.split("Name")[0].split(":")[1].strip()
+                        user_id_chat = "8:"+user_id
+                        session['user_id_chat'] = user_id_chat
+                        session['skype_id'] = email_id
+                        session['skype_pwd'] = pwd
+                        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+                        cursor.execute('SELECT * FROM ai_login WHERE login_user = % s AND password = % s', (email_id, pwd,))
+                        account = cursor.fetchone()
+                        if not account:
+                            cursor1 = mysql.connection.cursor()
+                            cursor1.execute('INSERT INTO ai_login (login_user, password) VALUES (%s, %s) ', (email_id, pwd,))
+                            mysql.connection.commit()
+                            return redirect(url_for('upload_json'))
+                        elif not account['json_file']:
+                            return redirect(url_for('upload_json'))
+                        elif not account['csv_file']:
+                            return redirect(url_for('upload'))
+                        else:
+                            return render_template('dashboard.html', sk_user=session['skype_id'])
 
                 except Exception as e:
                     print(e)
 
-#             return render_template('ai.html')
+            return render_template('ai.html')
 
     except Exception as e:
         print("Exception : ", str(e))
