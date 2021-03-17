@@ -38,11 +38,6 @@ app.config['MYSQL_USER'] = 'ivision1_ivision'
 app.config['MYSQL_PASSWORD'] = 'iVision'
 app.config['MYSQL_DB'] = 'ivision1_ivisions_b2bai'
 
-# app.config['MYSQL_HOST'] = 'mysql3000.mochahost.com'
-# app.config['MYSQL_USER'] = 'ivision1_ivision'
-# app.config['MYSQL_PASSWORD'] = 'iVisions_1'
-# app.config['MYSQL_DB'] = 'ivision1_ivisions_b2bai'
-
 mysql = MySQL(app)
 app.config['UPLOAD_PATH'] = 'uploads/'
 
@@ -56,7 +51,7 @@ def scheduledFunction():
     except Exception as e:
         print("Exception : ", str(e))
         
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return redirect(url_for('login'))
 
@@ -1429,3 +1424,6 @@ def classification():
 
     except Exception as e:
         print("Exception : ", str(e))
+        
+if __name__ == '__main__':
+    app.run(debug=True)
