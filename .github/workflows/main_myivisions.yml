@@ -32,4 +32,4 @@ jobs:
       with:
         app-name: 'myivisions'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4b4e5d01e7644e2b927a67eba4d5f491 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_48fe8179d7b843d585837a1c910b6bff }}
