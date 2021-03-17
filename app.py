@@ -764,7 +764,7 @@ def vendor():
             today_ = date.today()
             final_vendor_df = pd.read_csv(get_read_vendor_file)
             vendor_cursor = mysql.connection.cursor()
-            vendor_cursor.execute('SELECT skype_id FROM vendor AND logged_in_user=%s', (logged_id,))
+            vendor_cursor.execute('SELECT skype_id FROM vendor WHERE logged_in_user=%s', (logged_id,))
             first_check_client = vendor_cursor.fetchone()
             if not first_check_client:
                 sql_insert_vendor = "INSERT INTO vendor (skype_id, conv_date, conversation, manufacturer, logged_in_user) VALUES (%s, %s, %s, %s, %s)"
