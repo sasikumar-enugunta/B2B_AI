@@ -32,4 +32,4 @@ jobs:
       with:
         app-name: 'myfirstpythontest'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_32a3b60979354d41ad2a3956cc653577 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_44951d49b0a1465ba2879eeecfdf76e6 }}
