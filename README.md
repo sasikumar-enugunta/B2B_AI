@@ -1,7 +1,7 @@
 # B2B_AI
 A Python-Flask website for iVisions-GmbH
 
-This website links skype account contacts and conversations using SkPy library.
-The user needs to login with Skype credentials and if the credentials are correct then it will auto-fetch the conversations every 40 mins.
-The main agenda of this website is to classify text (vendor/client) based on the conversations and the text will be seggregated to respective vendor/client deals.
-I have used N-gram technique as a pivot version, and this can be extended to unsupervised learning in the future.
+This website uses the SkPy library to link contacts and conversations between Skype accounts.
+Once the user logs in with their Skype credentials, the conversations will be automatically retrieved every forty minutes if the credentials are valid.
+This website's primary goal is to categorize text (vendor/client) according to the conversations, with the text then being divided into the appropriate vendor/client deals.
+The N-gram approach, which I have employed as a pivot version, can eventually be expanded to unsupervised learning.
